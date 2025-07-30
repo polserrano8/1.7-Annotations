@@ -1,17 +1,15 @@
 package org.example.model;
 
 public class OnlineWorker extends Worker{
-    private static double internetCostMonth;
-    private int hoursWorked;
+    private final double INTERNETCOSTMONTH = 70;
+
     private double totalCost;
-    public OnlineWorker(String name, String surName, double priceHour, double internetCostMonth, int hoursWorked){
+    public OnlineWorker(String name, String surName, double priceHour){
         super(name,surName,priceHour);
-        OnlineWorker.internetCostMonth = internetCostMonth;
-        this.hoursWorked = hoursWorked;
     }
     @Override
-    public double wageCalculation(){
-        this.totalCost += (this.getPriceHour() * hoursWorked) + internetCostMonth;
+    public double wageCalculation(double hoursWorked){
+        this.totalCost += (this.getPriceHour() * hoursWorked) + this.INTERNETCOSTMONTH;
         return totalCost;
     };
 }

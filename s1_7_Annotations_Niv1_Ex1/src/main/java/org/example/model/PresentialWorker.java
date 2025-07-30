@@ -1,16 +1,14 @@
 package org.example.model;
 
 public class PresentialWorker extends Worker{
-    private static double gasolineCostMonth;
-    private int hoursWorked;
+    private static double gasolineCostMonth = 50;
+
     private double totalCost;
-    public PresentialWorker(String name, String surName, double priceHour, double gasolineCostMonth, int hoursWorked){
+    public PresentialWorker(String name, String surName, double priceHour){
         super(name,surName,priceHour);
-        PresentialWorker.gasolineCostMonth = gasolineCostMonth;
-        this.hoursWorked = hoursWorked;
     }
     @Override
-    public double wageCalculation(){
+    public double wageCalculation(double hoursWorked){
         this.totalCost += (this.getPriceHour() * hoursWorked) + gasolineCostMonth;
         return totalCost;
     };

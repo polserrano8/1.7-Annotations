@@ -12,7 +12,7 @@ public abstract class Worker {
         this.priceHour = priceHour;
     };
 
-    public abstract double wageCalculation();
+    public abstract double wageCalculation(double hoursWorked);
 
 
     public double getPriceHour() {
